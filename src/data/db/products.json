@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Bình gốm men rạn",
+    "category": "gom",
+    "price": 380000,
+    "stock": 6,
+    "tone": "#C9D6CF",
+    "description": "Nặn tay, nung củi, men rạn tự nhiên. Mỗi chiếc một vân khác nhau."
+  },
+  {
+    "id": 2,
+    "name": "Cốc gốm quai tròn",
+    "category": "gom",
+    "price": 145000,
+    "stock": 20,
+    "tone": "#B7C4D6",
+    "description": "Dung tích 300ml, an toàn cho lò vi sóng và máy rửa chén."
+  },
+  {
+    "id": 3,
+    "name": "Túi tote vải lanh nhuộm chàm",
+    "category": "vai",
+    "price": 260000,
+    "stock": 12,
+    "tone": "#2C3E6B",
+    "description": "Nhuộm chàm tự nhiên, khâu tay đường viền. Có túi trong có khóa."
+  },
+  {
+    "id": 4,
+    "name": "Khăn thổ cẩm dệt tay",
+    "category": "vai",
+    "price": 420000,
+    "stock": 5,
+    "tone": "#8E3B46",
+    "description": "Dệt khung cửi truyền thống, sợi cotton, hoa văn đối xứng."
+  },
+  {
+    "id": 5,
+    "name": "Khay gỗ xoài",
+    "category": "go",
+    "price": 310000,
+    "stock": 8,
+    "tone": "#B98B5E",
+    "description": "Gỗ xoài nguyên khối, phủ dầu thực vật, đường kính 28cm."
+  },
+  {
+    "id": 6,
+    "name": "Vòng tay mây tre đan",
+    "category": "go",
+    "price": 95000,
+    "stock": 30,
+    "tone": "#D9C58F",
+    "description": "Đan thủ công từ mây non, nhẹ và bền, có nhiều cỡ tay."
+  },
+  {
+    "id": 7,
+    "name": "Nến sáp ong hương sả",
+    "category": "giay",
+    "price": 120000,
+    "stock": 25,
+    "tone": "#E6B94A",
+    "description": "100% sáp ong và tinh dầu sả chanh, cháy khoảng 25 giờ."
+  },
+  {
+    "id": 8,
+    "name": "Bộ thiệp giấy dó (10 tấm)",
+    "category": "giay",
+    "price": 85000,
+    "stock": 40,
+    "tone": "#E9E4D4",
+    "description": "Giấy dó làm thủ công, in khắc gỗ, kèm phong bì cùng chất liệu."
+  }
+]

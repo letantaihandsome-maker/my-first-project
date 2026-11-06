@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xưởng Nhỏ — đồ thủ công làm từng món một</title>
+  <meta name="description" content="Gốm, vải chàm, gỗ tre và sáp ong làm thủ công tại Việt Nam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">Xưởng Nhỏ</a>
+    <button class="cart-btn" id="open-cart" aria-label="Mở giỏ hàng">
+      Giỏ hàng <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Làm tay,<br>từng món một.</h1>
+      <p>Chọn theo chất liệu bạn thích. Mỗi món được làm bởi một người thợ, nên không có hai món giống hệt nhau.</p>
+      <div class="materials" id="materials" role="tablist" aria-label="Lọc theo chất liệu"></div>
+    </section>
+
+    <section class="shelf" aria-live="polite">
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Miễn phí giao hàng cho đơn từ 500.000đ. Thanh toán khi nhận hàng.</p>
+  </footer>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Giỏ hàng</h2>
+      <button class="link-btn" id="close-cart">Đóng</button>
+    </div>
+    <ul class="cart-list" id="cart-list"></ul>
+    <div class="cart-sum" id="cart-sum"></div>
+
+    <form id="checkout" class="checkout" novalidate>
+      <label>Họ và tên <input name="name" autocomplete="name" required></label>
+      <label>Số điện thoại <input name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Địa chỉ giao hàng <textarea name="address" rows="2" autocomplete="street-address" required></textarea></label>
+      <p class="form-msg" id="form-msg" role="alert"></p>
+      <button class="primary" type="submit">Đặt hàng</button>
+    </form>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+:root {
+  --paper: #F6F8F5;
+  --ink: #1E2A4A;
+  --ink-soft: #55607C;
+  --celadon: #DCE6DF;
+  --line: #CBD4CE;
+  --accent: #D9482B;
+  --radius: 6px;
+  --font: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--paper); line-height: 1.6; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Thanh trên */
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 16px clamp(16px, 5vw, 56px); border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--paper); z-index: 5; }
+.brand { font-weight: 800; font-size: 1.25rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.cart-btn { background: none; border: 1px solid var(--ink); border-radius: 999px; padding: 6px 16px; cursor: pointer; font-weight: 500; }
+.cart-btn:hover { background: var(--ink); color: var(--paper); }
+.cart-count { display: inline-block; min-width: 1.5em; margin-left: 4px; text-align: center; background: var(--accent); color: #fff; border-radius: 999px; font-size: .8rem; }
+
+/* Hero: dải chất liệu là bộ lọc */
+.hero { padding: clamp(40px, 8vw, 96px) clamp(16px, 5vw, 56px) 32px; max-width: 1200px; margin: 0 auto; }
+.hero h1 { font-size: clamp(2.6rem, 8vw, 6rem); line-height: 1.02; letter-spacing: -0.035em; font-weight: 800; margin: 0 0 20px; }
+.hero p { max-width: 52ch; color: var(--ink-soft); font-size: 1.1rem; margin: 0 0 32px; }
+.materials { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border: 1px solid var(--ink); border-radius: var(--radius); overflow: hidden; }
+.material { border: 0; border-right: 1px solid var(--ink); padding: 18px 16px; text-align: left; cursor: pointer; background: var(--tone, var(--celadon)); font-weight: 500; min-height: 84px; display: flex; align-items: flex-end; }
+.material:last-child { border-right: 0; }
+.material[aria-selected="true"] { box-shadow: inset 0 -6px 0 var(--accent); font-weight: 700; }
+.material:hover { filter: brightness(.96); }
+
+/* Kệ hàng */
+.shelf { max-width: 1200px; margin: 0 auto; padding: 24px clamp(16px, 5vw, 56px) 64px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px 24px; }
+.card { display: flex; flex-direction: column; }
+.swatch { aspect-ratio: 4 / 3; border-radius: var(--radius); background-color: var(--tone); position: relative; overflow: hidden; }
+.swatch::after { content: ""; position: absolute; inset: 0; opacity: .22; }
+.pat-gom::after   { background: repeating-radial-gradient(circle at 70% 60%, #000 0 2px, transparent 2px 14px); }
+.pat-vai::after   { background: repeating-linear-gradient(45deg, #000 0 2px, transparent 2px 10px), repeating-linear-gradient(-45deg, #000 0 2px, transparent 2px 10px); }
+.pat-go::after    { background: repeating-linear-gradient(100deg, #000 0 1px, transparent 1px 9px); }
+.pat-giay::after  { background: radial-gradient(#000 1.5px, transparent 1.5px) 0 0 / 12px 12px; }
+.tag-last { position: absolute; left: 10px; top: 10px; background: var(--paper); border-radius: 999px; padding: 2px 10px; font-size: .8rem; font-weight: 500; z-index: 1; }
+.card h3 { margin: 14px 0 4px; font-size: 1.1rem; font-weight: 700; }
+.card p { margin: 0 0 12px; color: var(--ink-soft); font-size: .95rem; max-width: 46ch; flex: 1; }
+.card-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.price { font-weight: 700; }
+.add { border: 1px solid var(--ink); background: transparent; border-radius: var(--radius); padding: 8px 14px; cursor: pointer; font-weight: 500; }
+.add:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+.add:disabled { opacity: .45; cursor: not-allowed; }
+
+.footer { border-top: 1px solid var(--line); padding: 24px clamp(16px, 5vw, 56px); color: var(--ink-soft); font-size: .95rem; }
+
+/* Giỏ hàng */
+.scrim { position: fixed; inset: 0; background: rgba(30,42,74,.45); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 9; }
+.scrim.on { opacity: 1; pointer-events: auto; }
+.drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(420px, 100%); background: var(--paper); z-index: 10; padding: 20px; overflow-y: auto; transform: translateX(100%); transition: transform .25s ease; border-left: 1px solid var(--ink); }
+.drawer.open { transform: none; }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; }
+.drawer-head h2 { margin: 0; font-size: 1.4rem; }
+.link-btn { background: none; border: 0; text-decoration: underline; cursor: pointer; }
+.cart-list { list-style: none; padding: 0; margin: 16px 0; }
+.cart-list li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.qty { display: inline-flex; align-items: center; gap: 8px; }
+.qty button { width: 28px; height: 28px; border: 1px solid var(--ink); background: none; border-radius: 50%; cursor: pointer; }
+.empty { color: var(--ink-soft); padding: 12px 0; }
+.cart-sum { display: grid; gap: 4px; margin-bottom: 20px; }
+.cart-sum div { display: flex; justify-content: space-between; }
+.cart-sum .total { font-weight: 800; font-size: 1.15rem; border-top: 1px solid var(--ink); padding-top: 8px; margin-top: 4px; }
+.checkout { display: grid; gap: 12px; }
+.checkout label { display: grid; gap: 4px; font-weight: 500; font-size: .95rem; }
+.checkout input, .checkout textarea { border: 1px solid var(--ink-soft); border-radius: var(--radius); padding: 10px 12px; background: #fff; }
+.primary { background: var(--accent); color: #fff; border: 0; border-radius: var(--radius); padding: 12px; font-weight: 700; cursor: pointer; }
+.primary:hover { filter: brightness(.92); }
+.form-msg { margin: 0; min-height: 1.4em; color: var(--accent); font-weight: 500; }
+.form-msg.ok { color: #1F7A4D; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
